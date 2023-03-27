@@ -3,6 +3,7 @@ import CardList from "../component/cardList";
 import SearchBox from "../component/SearchBox";
 import './App.css'
 import Scroll from "../component/Scroll";
+import ErrorBoundry from "../component/ErrorBoundry";
 
 
 class App extends React.Component {
@@ -27,17 +28,19 @@ class App extends React.Component {
         this.setState({ searchField: event.target.value });
     }
     render() {
-        const {robots,searchField} = this.state;
+        const { robots, searchField } = this.state;
         const filteredRobots = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
         });
         return !robots.length ? <h1>Loading</h1> :
-              (
+            (
                 <div className="tc">
                     <h1>Robot Friends</h1>
                     <SearchBox onSearchChange={this.onSearchChange} />
                     <Scroll>
-                        <CardList robots={filteredRobots} />
+                        <ErrorBoundry>
+                            <CardList robots={filteredRobots} />
+                        </ErrorBoundry>
                     </Scroll>
 
                 </div>
