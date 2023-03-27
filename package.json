@@ -1,0 +1,19 @@
+{
+  "name": "robot-friends",
+  "version": "1.0.0",
+  "description": "A list of robot friends with their basic details",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robeil/robotfriends.git"
+  },
+  "author": "Robeil Aregawi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robeil/robotfriends/issues"
+  },
+  "homepage": "https://github.com/robeil/robotfriends#readme"
+}
